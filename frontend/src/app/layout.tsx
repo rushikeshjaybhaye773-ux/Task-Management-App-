@@ -1,0 +1,29 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import GoogleAuthProviderWrapper from "@/components/GoogleAuthProvider";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Task Management App",
+  description: "Task management assignment",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <GoogleAuthProviderWrapper>
+          <div className="min-h-screen bg-gray-50">
+            {children}
+          </div>
+        </GoogleAuthProviderWrapper>
+      </body>
+    </html>
+  );
+}
