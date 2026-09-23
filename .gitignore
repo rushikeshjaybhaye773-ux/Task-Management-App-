@@ -1,0 +1,8 @@
+# Environment files (never commit real secrets)
+.env
+.env.local
+.env.*.local
+
+# Gmail OAuth credentials (never commit)
+backend/credentials.json
+backend/token.json
